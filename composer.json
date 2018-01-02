@@ -1,0 +1,25 @@
+{
+    "name": "rapidwebltd/rw-file-cache-laravel-cache-driver",
+    "type": "library",
+    "description": "Laravel Cache Driver for RW-File-Cache package",
+    "keywords": ["cache", "caching", "file cache", "caching library", "library", "php", "laravel"],
+    "homepage": "https://github.com/rapidwebltd/RW-File-Cache-Laravel-Cache-Driver",
+    "license": "LGPL3",
+    "autoload": {
+        "psr-4": {
+            "RapidWeb\\RwFileCacheLaravelCacheDriver\\": "src/"
+        }
+    },
+    "require": {
+        "rapidwebltd/rw-file-cache": "^2.0",
+        "illuminate/contracts": "^5.5",
+        "illuminate/support": "^5.5"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RapidWeb\\RwFileCacheLaravelCacheDriver\\CacheServiceProvider"
+            ]
+        }
+    },
+}
