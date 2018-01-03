@@ -8,3 +8,7 @@ This package provides a Laravel Cache Driver for [RW File Cache](https://github.
 
 * PHP 7.0 or above
 * Laravel 5.5
+
+## Installation
+
+You can easily install with composer. Just run `composer require rapidwebltd/rw-file-cache-laravel-cache-driver`.
