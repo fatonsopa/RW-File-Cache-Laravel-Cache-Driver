@@ -43,7 +43,7 @@ class RWFileCacheStore implements Store
 
     public function put($key, $value, $minutes)
     {
-        return $this->rwFileCache->set($key, $value, $this->convertMinutesToSeconds($minutes));
+        return $this->rwFileCache->set($this->prefix.$key, $value, $this->convertMinutesToSeconds($minutes));
     }
 
     public function putMany(array $values, $minutes)
@@ -55,12 +55,12 @@ class RWFileCacheStore implements Store
 
     public function increment($key, $value = 1)
     {
-        return $this->rwFileCache->increment($key, $value);
+        return $this->rwFileCache->increment($this->prefix.$key, $value);
     }
 
     public function decrement($key, $value = 1)
     {
-        return $this->rwFileCache->decrement($key, $value);
+        return $this->rwFileCache->decrement($this->prefix.$key, $value);
     }
 
     public function forever($key, $value)
@@ -70,7 +70,7 @@ class RWFileCacheStore implements Store
 
     public function forget($key)
     {
-        return $this->rwFileCache->delete($key);
+        return $this->rwFileCache->delete($this->prefix.$key);
     }
     
     public function flush()
